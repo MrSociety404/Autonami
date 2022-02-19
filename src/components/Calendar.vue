@@ -35,7 +35,7 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          class="text-center py-3 text-xl" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
@@ -47,7 +47,7 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary' : 'text-center py-3 text-xl'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
@@ -61,7 +61,7 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          class="text-center py-3 text-xl" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
@@ -77,7 +77,7 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          class="text-center py-3 text-xl" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
@@ -95,7 +95,7 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          class="text-center py-3 text-xl" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
@@ -115,7 +115,7 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          class="text-center py-3 text-xl" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
@@ -137,7 +137,7 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          class="text-center py-3 text-xl" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
