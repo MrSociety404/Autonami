@@ -22,7 +22,7 @@ onMounted(() => {
         v-if="user"
         class="text-primary text-3xl text-center tracking-wider"
       >Bonjour {{ user.name }} !</h2>
-      <Button content="Plannifier la journée" @click="$emit('closeLanding')" />
+      <Button @click="$emit('closeLanding')">Plannifier la journée</Button>
     </div>
   </section>
 </template>
