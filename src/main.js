@@ -19,11 +19,11 @@ if (!usertry) {
     name: "Robert",
     contacts: [
       {
-        name: "André mon fils",
+        name: "Mon Petit Ruddy ",
         phone: "+32 778 65 86 90",
       },
       {
-        name: "Joselyne",
+        name: "Ma grande Joséphine",
         phone: "+32 976 27 80 86",
       },
     ],
