@@ -9,3 +9,25 @@ const app = createApp(App);
 app.use(router);
 
 app.mount("#app");
+
+// set localStorage
+
+const usertry = localStorage.getItem("user");
+
+if (!usertry) {
+  const user = {
+    name: "Robert",
+    contacts: [
+      {
+        name: "Mon Petit Ruddy ",
+        phone: "+32 778 65 86 90",
+      },
+      {
+        name: "Ma grande Joséphine",
+        phone: "+32 976 27 80 86",
+      },
+    ],
+  };
+
+  localStorage.setItem("user", JSON.stringify(user));
+}
