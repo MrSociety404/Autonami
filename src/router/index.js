@@ -19,6 +19,11 @@ const routes = [
     component: () => import("../views/Event.vue"),
   },
   {
+    path: "/edit/:id",
+    name: "Edition",
+    component: () => import("../views/Edit.vue"),
+  },
+  {
     path: "/help",
     name: "Aide",
     component: () => import("../views/Help.vue"),

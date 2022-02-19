@@ -1,37 +1,39 @@
 <script setup>
-import Stethoscope from "../assets/svg/Stethoscope.svg"
-import Hand from "../assets/svg/Hand.svg"
-import AddSmall from "../assets/svg/AddSmall.svg"
+import Stethoscope from "../assets/svg/Stethoscope.svg";
+import Hand from "../assets/svg/Hand.svg";
+import AddSmall from "../assets/svg/AddSmall.svg";
 import Button from "../components/Button.vue";
 
-import { ref } from "@vue/reactivity"
-import { onMounted } from "@vue/runtime-core"
-import Input from "../components/Input.vue"
+import { ref } from "@vue/reactivity";
+import { onMounted } from "@vue/runtime-core";
+import Input from "../components/Input.vue";
 
-const user = ref(null)
-const formIsClose = ref(true)
+const user = ref(null);
+const formIsClose = ref(true);
 const formData = ref({
   name: "",
-  phone: ""
-})
+  phone: "",
+});
 
 onMounted(() => {
-  user.value = JSON.parse(localStorage.getItem('user'))
-})
+  user.value = JSON.parse(localStorage.getItem("user"));
+});
 
 const handleAddContact = () => {
-  formIsClose.value = !formIsClose.value
-}
+  formIsClose.value = !formIsClose.value;
+};
 const handleAddNewContact = () => {
   formIsClose.value = !formIsClose.value;
   user.value.contacts.push(formData.value);
-  localStorage.setItem("user", JSON.stringify(user.value))
-}
+  localStorage.setItem("user", JSON.stringify(user.value));
+};
 </script>
 
 <template>
   <main class="pb-28">
-    <h1 class="text-center text-3xl tracking-wide font-semibold">Appels prioritaires</h1>
+    <h1 class="text-center text-3xl tracking-wide font-semibold">
+      Appels prioritaires
+    </h1>
     <section class="flex justify-between p-6 m-4 Help__fastcall">
       <div>
         <div class="Help__icon">
@@ -47,7 +49,7 @@ const handleAddNewContact = () => {
       </div>
     </section>
     <section class="px-6 py-4 z-10" v-if="user">
-      <h2 class="font-semibold text-2xl tracking-wider">Vos contacts</h2>
+      <h2 class="font-semibold text-2xl tracking-wider">Vos proches</h2>
 
       <ol>
         <li
@@ -68,7 +70,7 @@ const handleAddNewContact = () => {
         @click="handleAddContact()"
         v-if="formIsClose"
       >
-        <AddSmall />Ajouter un contact
+        <AddSmall />Ajouter un proche
       </Button>
       <!-- Add contact form -->
       <div v-else>
@@ -78,7 +80,8 @@ const handleAddNewContact = () => {
           class="bg-primary text-white flex items-center justify-around"
           @click="handleAddNewContact()"
           v-if="!formIsClose"
-        >Ajouter le contact</Button>
+          >Ajouter le contact</Button
+        >
       </div>
     </section>
   </main>

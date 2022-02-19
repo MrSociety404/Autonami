@@ -3,11 +3,12 @@ import Input from '../components/Input.vue';
 import Button from '../components/Button.vue';
 
 import { onMounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 
 import { v4 as uuid } from 'uuid'
 
 const router = useRouter()
+const route = useRoute()
 
 const today = new Date().toLocaleString("fr-FR", {
   day: '2-digit',
@@ -18,7 +19,7 @@ const today = new Date().toLocaleString("fr-FR", {
 const user = ref(null)
 
 const formdata = ref({
-  id: uuid(),
+  id: "",
   name: "",
   date: "",
   heure: "",
@@ -28,6 +29,8 @@ const formdata = ref({
 
 onMounted(() => {
   user.value = JSON.parse(localStorage.getItem('user'))
+  const getEvent = user.value.events.filter(event => event.id === route.params.id)
+  formdata.value = getEvent[0]
 })
 
 const goBack = () => {
@@ -36,6 +39,14 @@ const goBack = () => {
 
 const addEvent = () => {
   user.value.events.push(formdata.value);
+  user.value.events = user.value.events.map(event => {
+    if (event.id === route.params.id) {
+      return formdata.value
+    } else {
+      return event
+    }
+  })
+
   localStorage.setItem("user", JSON.stringify(user.value))
   router.push('/')
 }
@@ -87,7 +98,7 @@ const addEvent = () => {
           <label for="0" class="radio__label">Non merci</label>
         </div>
       </div>
-      <Button class="bg-secondary w-full" @click="addEvent()">Ajouter</Button>
+      <Button class="bg-secondary w-full" @click="addEvent()">Modifier</Button>
       <Button class="bg-primary text-white w-full" @click="goBack()">Annuler</Button>
     </form>
   </main>
