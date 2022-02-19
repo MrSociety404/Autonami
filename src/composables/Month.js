@@ -75,14 +75,29 @@ class Month {
    * @returns {Array} - Array with date objects for each day of the month
    */
   setDays(month, year) {
+    const user = JSON.parse(localStorage.getItem('user'))
+    const events = user.events
+
     const lastDateOfMonth = new Date(year, month, -0).getDate()
     const allMonthDays = []
+
     for (let i = lastDateOfMonth; i >= 1; i--) {
+      const dayEvents = []
+
+      for (const event of events) {
+        const dateArr = event.date.split('-')
+        const dateArrNum = dateArr.map(elt => parseInt(elt))
+
+        if (dateArrNum[0] === year && dateArrNum[1] === month && dateArrNum[2] === i) {
+          dayEvents.push(event)
+        }
+      }
+
       allMonthDays.unshift(
         {
           weekday: this.getWeekday(i, month, year),
           date: i,
-          events: []
+          events: dayEvents
         }
       )
     }
