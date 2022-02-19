@@ -6,6 +6,7 @@ class Month {
   constructor (month, year) {
     this.name = this.setName(month)
     this.days = this.setDays(month, year)
+    this.year = year
   }
 
   /**

@@ -1,9 +1,11 @@
 <script setup>
-
+import Calendar from '../components/Calendar.vue';
 </script>
 
 <template>
-  <main></main>
+  <main>
+    <Calendar />
+  </main>
 </template>
 
 <style lang="scss">
