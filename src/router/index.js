@@ -9,7 +9,7 @@ const routes = [
     component: Home,
   },
   {
-    path: "/day",
+    path: "/:year/:month/:day",
     name: "Journée",
     component: () => import("../views/Day.vue"),
   },
