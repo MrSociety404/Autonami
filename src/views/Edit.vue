@@ -38,7 +38,6 @@ const goBack = () => {
 }
 
 const addEvent = () => {
-  user.value.events.push(formdata.value);
   user.value.events = user.value.events.map(event => {
     if (event.id === route.params.id) {
       return formdata.value
