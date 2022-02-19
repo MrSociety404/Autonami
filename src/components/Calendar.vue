@@ -1,4 +1,7 @@
 <script setup>
+import ChevronLeft from '../assets/svg/ChevronLeft.svg'
+import ChevronRight from '../assets/svg/ChevronRight.svg'
+
 defineProps({
   month: Object
 })
@@ -9,14 +12,14 @@ const today = new Date().getDate()
 <template>
   <div class="calendar">
     <div class="flex justify-center pb-6 pt-2 capitalize">
-      <button class="text-2xl font-bold" @click="$emit('clickPrevious')">
-       {{ '<' }}
+      <button @click="$emit('clickPrevious')">
+       <ChevronLeft />
       </button>
 
-      <h1 class="px-8 text-3xl">{{ month.name }}</h1>
+      <h1 class="px-8 text-3xl font-bold">{{ month.name }}</h1>
       
-      <button class="text-2xl font-bold" @click="$emit('clickNext')">
-        >
+      <button @click="$emit('clickNext')">
+        <ChevronRight />
       </button>
     </div>
 
