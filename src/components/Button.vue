@@ -1,16 +1,9 @@
-<script setup>
-defineProps({
-  content: {
-    type: String,
-    requried: true
-  }
-})
-</script>
-
 <template>
   <button
-    class="w-80 rounded-full bg-secondary mx-auto my-8 py-4 block text-xl font-bold text-center button"
-  >{{ content }}</button>
+    class="w-80 rounded-full bg-secondary mx-auto my-8 py-4 block text-xl font-bold text-center button tracking-wider"
+  >
+    <slot />
+  </button>
 </template>
 
 

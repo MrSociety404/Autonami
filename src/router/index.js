@@ -11,17 +11,17 @@ const routes = [
   {
     path: "/day",
     name: "Journée",
-    component: import("../views/Day.vue"),
+    component: () => import("../views/Day.vue"),
   },
   {
     path: "/event",
     name: "Evènement",
-    component: import("../views/Event.vue"),
+    component: () => import("../views/Event.vue"),
   },
   {
     path: "/help",
     name: "Aide",
-    component: import("../views/Help.vue"),
+    component: () => import("../views/Help.vue"),
   },
 ];
 
