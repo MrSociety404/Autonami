@@ -11,7 +11,7 @@ const today = new Date().getDate()
 
 <template>
   <div class="calendar">
-    <div class="flex justify-center pb-6 pt-2 capitalize">
+    <div class="flex justify-center pb-8 pt-2 capitalize">
       <button @click="$emit('clickPrevious')">
        <ChevronLeft />
       </button>
