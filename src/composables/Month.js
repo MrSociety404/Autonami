@@ -89,6 +89,9 @@ class Month {
   }
 }
 
+// TEST (if you want to check):
 // const month = new Month(2, 2022)
 // console.log(month.name)
 // console.log(month.days)
+
+export default Month
