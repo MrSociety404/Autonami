@@ -11,14 +11,12 @@ const clickPrevious = () => {
   currentMonth = currentMonth === 1 ? 12 : currentMonth - 1
   currentYear = currentMonth === 12 ? currentYear - 1 : currentYear
   month.value = new Month(currentMonth, currentYear)
-  console.log(currentMonth, currentYear)
 }
 
 const clickNext = () => {
   currentMonth = currentMonth === 12 ? 1 : currentMonth + 1
   currentYear = currentMonth === 1 ? currentYear + 1 : currentYear
   month.value = new Month(currentMonth, currentYear)
-  console.log(currentMonth, currentYear)
 }
 </script>
 

@@ -2,133 +2,142 @@
 defineProps({
   month: Object
 })
+
+const today = new Date().getDate()
 </script>
 
 <template>
   <div class="calendar">
-    <div class="calendar__header">
-      <button class="previous" @click="$emit('clickPrevious')">
-        minus
+    <div class="flex justify-center pb-6 pt-2 capitalize">
+      <button class="text-2xl font-bold" @click="$emit('clickPrevious')">
+       {{ '<' }}
       </button>
+
+      <h1 class="px-8 text-3xl">{{ month.name }}</h1>
       
-      <h1>{{ month.name }}</h1>
-      
-      <button class="next" @click="$emit('clickNext')">
-        plus
+      <button class="text-2xl font-bold" @click="$emit('clickNext')">
+        >
       </button>
     </div>
 
-    <div class="grid">
-      <div>
-        <p class="day">lun</p>
-        <p class="day">mar</p>
-        <p class="day">mer</p>
-        <p class="day">jeu</p>
-        <p class="day">ven</p>
-        <p class="day">sam</p>
-        <p class="day">dim</p>
+    <div>
+      <div class="flex justify-around">
+        <p class="uppercase font-semibold">lun</p>
+        <p class="uppercase font-semibold">mar</p>
+        <p class="uppercase font-semibold">mer</p>
+        <p class="uppercase font-semibold">jeu</p>
+        <p class="uppercase font-semibold">ven</p>
+        <p class="uppercase font-semibold">sam</p>
+        <p class="uppercase font-semibold">dim</p>
       </div>
 
-      <div class="real-grid" v-if="month.days[0].weekday === 'lundi'">
+      <div class="flex flex-wrap" v-if="month.days[0].weekday === 'lundi'">
         <div
           v-for="(day, i) of month.days"
           :key="i"
+          class="text-center py-3 text-xl" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
       </div>
 
-      <div class="real-grid" v-else-if="month.days[0].weekday === 'mardi'">
-        <div></div>
+      <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'mardi'">
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
         <div
           v-for="(day, i) of month.days"
           :key="i"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary' : 'text-center py-3 text-xl'" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
       </div>
 
-      <div class="real-grid" v-else-if="month.days[0].weekday === 'mercredi'">
-        <div></div>
+      <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'mercredi'">
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
         <div
           v-for="(day, i) of month.days"
           :key="i"
+          class="text-center py-3 text-xl" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
       </div>
 
-      <div class="real-grid" v-else-if="month.days[0].weekday === 'jeudi'">
-        <div></div>
+      <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'jeudi'">
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
         <div
           v-for="(day, i) of month.days"
           :key="i"
+          class="text-center py-3 text-xl" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
       </div>
 
-      <div class="real-grid" v-else-if="month.days[0].weekday === 'vendredi'">
-        <div></div>
+      <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'vendredi'">
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
         <div
           v-for="(day, i) of month.days"
           :key="i"
+          class="text-center py-3 text-xl" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
       </div>
 
-      <div class="real-grid" v-else-if="month.days[0].weekday === 'samedi'">
-        <div></div>
+      <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'samedi'">
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
         <div
           v-for="(day, i) of month.days"
           :key="i"
+          class="text-center py-3 text-xl" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
       </div>
 
-      <div class="real-grid" v-else-if="month.days[0].weekday === 'dimanche'">
-        <div></div>
+      <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'dimanche'">
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
-        <div></div>
+        <div class="text-center py-3 text-xl" style="width: 14.28%"></div>
 
         <div
           v-for="(day, i) of month.days"
           :key="i"
+          class="text-center py-3 text-xl" style="width: 14.28%"
         >
           {{ day.date }}
         </div>
