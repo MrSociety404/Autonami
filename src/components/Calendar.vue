@@ -10,7 +10,7 @@ defineProps({
       <button class="previous" @click="$emit('clickPrevious')">
         minus
       </button>
-      
+
       <h1>{{ month.name }}</h1>
       
       <button class="next" @click="$emit('clickNext')">
