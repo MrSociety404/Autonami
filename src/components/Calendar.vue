@@ -1,6 +1,9 @@
 <script setup>
 import ChevronLeft from '../assets/svg/ChevronLeft.svg'
 import ChevronRight from '../assets/svg/ChevronRight.svg'
+import { useRouter } from "vue-router"
+
+const router = useRouter()
 
 defineProps({
   month: Object
@@ -38,7 +41,8 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer' : 'text-center py-3 text-xl cursor-pointer'" style="width: 14.28%"
+          @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
         >
           {{ day.date }}
         </div>
@@ -50,7 +54,8 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer' : 'text-center py-3 text-xl cursor-pointer'" style="width: 14.28%"
+          @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
         >
           {{ day.date }}
         </div>
@@ -64,7 +69,8 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer' : 'text-center py-3 text-xl cursor-pointer'" style="width: 14.28%"
+          @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
         >
           {{ day.date }}
         </div>
@@ -80,7 +86,8 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer' : 'text-center py-3 text-xl cursor-pointer'" style="width: 14.28%"
+          @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
         >
           {{ day.date }}
         </div>
@@ -98,7 +105,8 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer' : 'text-center py-3 text-xl cursor-pointer'" style="width: 14.28%"
+          @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
         >
           {{ day.date }}
         </div>
@@ -118,7 +126,8 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer' : 'text-center py-3 text-xl cursor-pointer'" style="width: 14.28%"
+          @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
         >
           {{ day.date }}
         </div>
@@ -140,7 +149,8 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl' : 'text-center py-3 text-xl'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer' : 'text-center py-3 text-xl cursor-pointer'" style="width: 14.28%"
+          @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
         >
           {{ day.date }}
         </div>

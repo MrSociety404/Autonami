@@ -7,6 +7,7 @@ class Month {
     this.name = this.setName(month)
     this.days = this.setDays(month, year)
     this.year = year
+    this.number = month
   }
 
   /**
