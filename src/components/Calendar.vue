@@ -13,7 +13,7 @@ const today = new Date().getDate()
   <div class="calendar">
     <div class="flex justify-center pb-8 pt-2 capitalize">
       <button @click="$emit('clickPrevious')">
-       <ChevronLeft />
+        <ChevronLeft />
       </button>
 
       <h1 class="px-8 text-3xl font-bold">{{ month.name }}</h1>
