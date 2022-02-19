@@ -22,17 +22,21 @@ const todayEvents = new Month(
 </script>
 
 <template>
-  <main class="flex">
-    <div class="mx-auto" v-if="todayEvents.length > 0">      
+  <main class="p-8">
+    <h1 class="text-center text-xl font-semibold">{{ `${rebuiltDate[2]}/${rebuiltDate[1]}/${rebuiltDate[0]}` }}</h1>
+
+    <section class="flex">
+      <div class="mx-auto w-full" v-if="todayEvents.length > 0">      
       <Event
         v-for="todayEvent of todayEvents"
         :key="todayEvent.id"
         :todayEvent="todayEvent"
-      />
-    </div>
+        />
+      </div>
 
-    <p class="mx-auto" v-else>
-      Aucun évènement prévu.
-    </p>
+      <p class="mx-auto" v-else>
+        Aucun évènement prévu.
+      </p>
+    </section>
   </main>
 </template>
