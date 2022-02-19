@@ -12,10 +12,6 @@ defineProps({
     type: [String, Number],
     default: ''
   },
-  type: {
-    type: String,
-    default: 'text'
-  },
 })
 </script>
 
@@ -27,22 +23,12 @@ defineProps({
         v-bind="$attrs"
         :value="modelValue"
         :id="label"
-        :type="type"
         @input="$emit('update:modelValue', $event.target.value)"
         class="bg-layer w-full rounded-full p-4 input"
       />
-      <Calendar v-if="type === 'date'" class="input__icon" />
-      <Time v-if="type === 'time'" class="input__icon" />
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.input {
-  &__icon {
-    position: absolute;
-    right: 20px;
-    top: 30%;
-  }
-}
 </style>
