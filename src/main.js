@@ -47,7 +47,7 @@ if (!usertry) {
       },
       {
         id: "447ddd14-24c4-40f2-9898-de7d3cec8dfa",
-        name: "Regarder le Standart",
+        name: "Regarder le Standard",
         date: "2022-02-19",
         heure: "20:00",
         help: "0",

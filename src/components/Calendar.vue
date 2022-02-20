@@ -19,8 +19,8 @@ const today = new Date().getDate()
         <ChevronLeft />
       </button>
 
-      <h1 class="px-8 text-3xl font-bold">{{ month.name }}</h1>
-      
+      <h1 class="px-8 text-3xl font-bold" @click="$emit('clickMonth')">{{ month.name }}</h1>
+
       <button @click="$emit('clickNext')" aria-label="suivant">
         <ChevronRight />
       </button>
@@ -41,11 +41,10 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'"
+          style="width: 14.28%"
           @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
-        >
-          {{ day.date }}
-        </div>
+        >{{ day.date }}</div>
       </div>
 
       <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'mardi'">
@@ -54,12 +53,11 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'"
+          style="width: 14.28%"
           @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
           :id="day.events.length > 0 ? 'chevron-date' : ''"
-        >
-          {{ day.date }}
-        </div>
+        >{{ day.date }}</div>
       </div>
 
       <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'mercredi'">
@@ -70,11 +68,10 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'"
+          style="width: 14.28%"
           @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
-        >
-          {{ day.date }}
-        </div>
+        >{{ day.date }}</div>
       </div>
 
       <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'jeudi'">
@@ -87,11 +84,10 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'"
+          style="width: 14.28%"
           @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
-        >
-          {{ day.date }}
-        </div>
+        >{{ day.date }}</div>
       </div>
 
       <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'vendredi'">
@@ -106,11 +102,10 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'"
+          style="width: 14.28%"
           @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
-        >
-          {{ day.date }}
-        </div>
+        >{{ day.date }}</div>
       </div>
 
       <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'samedi'">
@@ -127,11 +122,10 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'"
+          style="width: 14.28%"
           @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
-        >
-          {{ day.date }}
-        </div>
+        >{{ day.date }}</div>
       </div>
 
       <div class="flex flex-wrap" v-else-if="month.days[0].weekday === 'dimanche'">
@@ -150,26 +144,25 @@ const today = new Date().getDate()
         <div
           v-for="(day, i) of month.days"
           :key="i"
-          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'" style="width: 14.28%"
+          :class="day.date === today ? 'text-center py-3 text-xl bg-secondary rounded-xl cursor-pointer relative' : 'text-center py-3 text-xl cursor-pointer relative'"
+          style="width: 14.28%"
           @click="router.push(`/${month.year}/${month.number}/${day.date}`)"
-        >
-          {{ day.date }}
-        </div>
+        >{{ day.date }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <style lang="scss">
-  #chevron-date {
-    &::after {
-      content: '';
-      width: 15px;
-      height: 3px;
-      position: absolute;
-      background-color: #75302D;
-      bottom: 5px;
-      left: 18px;
-    }
+#chevron-date {
+  &::after {
+    content: "";
+    width: 15px;
+    height: 3px;
+    position: absolute;
+    background-color: #75302d;
+    bottom: 5px;
+    left: 18px;
   }
+}
 </style>
