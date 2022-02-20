@@ -3,12 +3,12 @@ import ChevronLeft from '../assets/svg/ChevronLeft.svg'
 import ChevronRight from '../assets/svg/ChevronRight.svg'
 import { useRouter } from "vue-router"
 
-const router = useRouter()
 
 defineProps({
   month: Object
 })
 
+const router = useRouter()
 const today = new Date().getDate()
 </script>
 

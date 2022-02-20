@@ -1,17 +1,22 @@
 <script setup>
+// Components
 import Month from '../composables/Month'
 import Calendar from '../components/Calendar.vue'
 import Feedback from "../components/Feedback.vue";
 import MessageConf from "../components/MessageConf.vue";
 
+// Dependencies
 import { ref } from 'vue'
 
+// Vairables
 let currentMonth = new Date().getMonth() + 1
 let currentYear = new Date().getFullYear()
 let month = ref(new Month(currentMonth, currentYear))
 const feedbackIsOpen = ref(false);
 const messageIsOpen = ref(false);
 
+
+// Logic
 const closeFeedbackgHandler = () => {
   feedbackIsOpen.value = false;
 };

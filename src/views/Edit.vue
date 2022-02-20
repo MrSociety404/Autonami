@@ -1,23 +1,21 @@
 <script setup>
+// Components
 import Input from '../components/Input.vue';
 import Button from '../components/Button.vue';
 
+// Dependencies
 import { onMounted, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 
-import { v4 as uuid } from 'uuid'
-
+// Variables 
 const router = useRouter()
 const route = useRoute()
-
 const today = new Date().toLocaleString("fr-FR", {
   day: '2-digit',
   year: 'numeric',
   month: '2-digit'
 })
-
 const user = ref(null)
-
 const formdata = ref({
   id: "",
   name: "",
@@ -27,6 +25,7 @@ const formdata = ref({
   location: "",
 })
 
+// Logic
 onMounted(() => {
   user.value = JSON.parse(localStorage.getItem('user'))
   const getEvent = user.value.events.filter(event => event.id === route.params.id)
