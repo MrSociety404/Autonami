@@ -1,11 +1,33 @@
 <script setup>
 import Month from '../composables/Month'
 import Calendar from '../components/Calendar.vue'
+import Feedback from "../components/Feedback.vue";
+import MessageConf from "../components/MessageConf.vue";
+
 import { ref } from 'vue'
 
 let currentMonth = new Date().getMonth() + 1
 let currentYear = new Date().getFullYear()
 let month = ref(new Month(currentMonth, currentYear))
+const feedbackIsOpen = ref(false);
+const messageIsOpen = ref(false);
+
+const closeFeedbackgHandler = () => {
+  feedbackIsOpen.value = false;
+};
+
+const sendMessageHandler = () => {
+  messageIsOpen.value = true;
+  feedbackIsOpen.value = false;
+};
+
+const closeMessageHandler = () => {
+  messageIsOpen.value = false;
+};
+
+const displayHelp = () => {
+  feedbackIsOpen.value = true
+}
 
 const clickPrevious = () => {
   currentMonth = currentMonth === 1 ? 12 : currentMonth - 1
@@ -26,8 +48,15 @@ const clickNext = () => {
       :month="month"
       @clickPrevious="clickPrevious"
       @clickNext="clickNext"
+      @clickMonth="displayHelp()"
     />
   </main>
+  <Feedback
+    v-if="feedbackIsOpen"
+    @closeFeedback="closeFeedbackgHandler()"
+    @sendMessage="sendMessageHandler()"
+  />
+  <MessageConf v-if="messageIsOpen" @closeMessage="closeMessageHandler()" />
 </template>
 
 <style lang="scss">
