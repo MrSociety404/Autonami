@@ -15,13 +15,13 @@ const today = new Date().getDate()
 <template>
   <div class="calendar">
     <div class="flex justify-center pb-8 pt-2 capitalize">
-      <button @click="$emit('clickPrevious')">
+      <button @click="$emit('clickPrevious')" aria-label="précedent">
         <ChevronLeft />
       </button>
 
       <h1 class="px-8 text-3xl font-bold">{{ month.name }}</h1>
       
-      <button @click="$emit('clickNext')">
+      <button @click="$emit('clickNext')" aria-label="suivant">
         <ChevronRight />
       </button>
     </div>
